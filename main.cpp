@@ -22,8 +22,6 @@ int main() {
 	cout<<"Relative error for example 1 with qr is :"<<abs(err_rel_qr_1)<<endl;
 	//LU partialpivlu first example
 	FullPivLU<Matrix2d> lu(mat_1);
-	//Matrix2d u = lu.matrixLU().triangularView<Upper>();
-	//Matrix2d l = lu.matrixLU().triangularView<StrictlyLower>(); //palu1
 	Vector2d x_Lu_1 = lu.solve(b_1);
 	//cout<<"x LU first example is equal to"<<x_Lu_1<<endl;
 	double err_rel_lu_1=(x_Lu_1-x_es).norm()/x_es.norm();
