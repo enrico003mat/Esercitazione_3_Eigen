@@ -17,7 +17,7 @@ int main() {
          1.672384680188350e-01;  
 	// QR	
 	Vector2d x_1 = mat_1.colPivHouseholderQr().solve(b_1);
-	//cout<<"x first R is equal to"<<x_1<<endl;
+	cout<<"x solution for first ex , QR factorization is equal to "<<x_1<<endl;
 	double err_rel_qr_1=(x_1-x_es).norm()/x_es.norm();
 	cout<<"Relative error for example 1 with qr is :"<<abs(err_rel_qr_1)<<endl;
 	//LU partialpivlu first example
@@ -27,6 +27,7 @@ int main() {
 	Vector2d x_Lu_1 = lu.solve(b_1);
 	//cout<<"x LU first example is equal to"<<x_Lu_1<<endl;
 	double err_rel_lu_1=(x_Lu_1-x_es).norm()/x_es.norm();
+	cout<<"x solution for first ex , PALU factorization is equal to "<<x_Lu_1<<endl;
 	cout<<"Relative error with Palu first example is :"<<abs(err_rel_lu_1)<<endl;
 	
 	//second example
@@ -38,11 +39,13 @@ int main() {
 	// QR	
 	Vector2d x_2 = mat_2.colPivHouseholderQr().solve(b_2);
 	double err_rel_qr_2=(x_2-x_es).norm()/x_es.norm();
+	cout<<"x solution for second ex , QR factorization is equal to "<<x_2<<endl;
 	cout<<"Relative error for example 2 with qr is :"<<abs(err_rel_qr_2)<<endl;
 	//LU partialpivlu first example
 	FullPivLU<Matrix2d> lu_2(mat_2);
 	Vector2d x_Lu_2 = lu_2.solve(b_2);
 	double err_rel_lu_2=(x_Lu_2-x_es).norm()/x_es.norm();
+	cout<<"x solution for second ex , PALU factorization is equal to "<<x_Lu_2<<endl;
 	cout<<"Relative error with Palu second example is :"<<abs(err_rel_lu_2)<<endl;
 	
 	
@@ -55,10 +58,12 @@ int main() {
 	// QR	
 	Vector2d x_3 = mat_3.colPivHouseholderQr().solve(b_3);
 	double err_rel_qr_3=(x_3-x_es).norm()/x_es.norm();
+	cout<<"x solution for third ex , QR factorization is equal to "<<x_3<<endl;
 	cout<<"Relative error for example 3 with qr is :"<<abs(err_rel_qr_3)<<endl;
 	FullPivLU<Matrix2d> lu_3(mat_3);
 	Vector2d x_Lu_3 = lu_3.solve(b_3);
 	double err_rel_lu_3=(x_Lu_3-x_es).norm()/x_es.norm();
+	cout<<"x solution for third ex , PALU factorization is equal to "<<x_Lu_3<<endl;
 	cout<<"Relative error with Palu third example is :"<<abs(err_rel_lu_3)<<endl;
 	
 	
